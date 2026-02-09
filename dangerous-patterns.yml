@@ -1,14 +1,86 @@
 banned:
-  - ^\.env$
-  - ^\.env\..+$
-  - secrets?
-  - credentials?
-  - \.pem$
-  - \.key$
-  - id_rsa
-  - terraform\.tfvars$
-  - docker-compose\.override\.ya?ml$
-  - config/.*secret.*
+  - pattern: ^\.env$
+    reason: dotenv file
+  - pattern: ^\.env\..+$
+    reason: dotenv file
+  - pattern: secrets?
+    reason: contains secrets
+  - pattern: credentials?
+    reason: contains credentials
+  - pattern: \.pem$
+    reason: private key
+  - pattern: \.key$
+    reason: private key
+  - pattern: \.p12$
+    reason: private key
+  - pattern: \.pfx$
+    reason: private key
+  - pattern: \.crt$
+    reason: certificate
+  - pattern: \.csr$
+    reason: certificate
+  - pattern: \.der$
+    reason: certificate
+  - pattern: \.jks$
+    reason: keystore
+  - pattern: \.p8$
+    reason: private key
+  - pattern: id_rsa
+    reason: ssh private key
+  - pattern: serviceAccountKey\.json$
+    reason: cloud credentials
+  - pattern: google-services\.json$
+    reason: mobile app credentials
+  - pattern: GoogleService-Info\.plist$
+    reason: mobile app credentials
+  - pattern: \.aws/credentials$
+    reason: cloud credentials
+  - pattern: \.npmrc$
+    reason: registry credentials
+  - pattern: \.pypirc$
+    reason: registry credentials
+  - pattern: \.firebase/
+    reason: cloud credentials
+  - pattern: \.supabase/
+    reason: cloud credentials
+  - pattern: \.expo/
+    reason: app credentials
+  - pattern: \.gradle/
+    reason: build secrets
+  - pattern: \.keystore$
+    reason: keystore
+  - pattern: terraform\.tfvars$
+    reason: terraform secrets
+  - pattern: docker-compose\.override\.ya?ml$
+    reason: service credentials
+  - pattern: config/.*secret.*
+    reason: secrets in config
+  - pattern: \.sqlite$
+    reason: local database
+  - pattern: \.db$
+    reason: local database
+  - pattern: \.log$
+    reason: log output
+  - pattern: \.ipynb_checkpoints/
+    reason: notebook checkpoint
+  - pattern: \.vscode/settings\.json$
+    reason: IDE settings
+  - pattern: \.idea/
+    reason: IDE settings
+  - pattern: node_modules/
+    reason: vendored dependencies
+  - pattern: venv/
+    reason: virtualenv
+  - pattern: coverage/
+    reason: coverage output
+  - pattern: \.nyc_output/
+    reason: coverage output
+  - pattern: dist/
+    reason: build output
+  - pattern: Thumbs\.db$
+    reason: OS artifact
+  - pattern: \.DS_Store$
+    reason: OS artifact
 
 allowed:
   - ^\.env\.example$
