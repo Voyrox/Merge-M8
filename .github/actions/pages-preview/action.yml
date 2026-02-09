@@ -1,6 +1,6 @@
 name: Pages Preview
 author: Ewen MacCulloch <ewen@macculloch.net>
-description: Generate PR intelligence report and post to the PR
+description: Generate PR Nightwatch report and post to the PR
 branding:
   color: gray-dark
   icon: upload-cloud
@@ -11,8 +11,8 @@ inputs:
     required: true
     default: ${{ github.token }}
   timeZone:
-    description: Time zone for engineer state calculations (TZ format)
-    required: false
+    description: Time zone for calculations (TZ format)
+    required: true
     default: Australia/Sydney
 
 runs:

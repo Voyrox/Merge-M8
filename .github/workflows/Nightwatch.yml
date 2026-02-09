@@ -11,7 +11,7 @@ permissions:
   pull-requests: write
 
 jobs:
-  intelligence:
+  Nightwatch:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -22,7 +22,7 @@ jobs:
         with:
           node-version: 20
 
-      - name: Run intelligence bot
+      - name: Run Nightwatch bot
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TZ: Australia/Sydney

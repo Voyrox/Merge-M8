@@ -2,7 +2,7 @@
 
 ## Pages Preview Action
 
-Generate a PR intelligence report and post it as a comment.
+Generate a PR Nightwatch report and post it as a comment.
 
 ### Usage
 
