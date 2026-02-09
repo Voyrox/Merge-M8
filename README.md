@@ -1,4 +1,4 @@
-# Nightwatch GitHub Action
+# PR Risk Assessment GitHub Action
 
 Nightwatch is a GitHub Action for teams that need faster, higher quality pull request reviews. It posts a concise, actionable report directly on the PR to accelerate resolution and reduce review thrash.
 
@@ -21,10 +21,10 @@ Nightwatch is a GitHub Action for teams that need faster, higher quality pull re
 
 ### Usage
 
-Add Nightwatch as a drop-in GitHub Action (example: `.github/workflows/pages-preview.yml`):
+Add Nightwatch as a drop-in GitHub Action (example workflow):
 
 ```yaml
-name: Pages Preview
+name: PR Risk Assessment
 
 on:
   pull_request:
@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Nightwatch
-        uses: ./.github/actions/pages-preview
+        uses: Voyrox/Nightwatch@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           timeZone: America/New_York  # optional override (default: Australia/Sydney)
