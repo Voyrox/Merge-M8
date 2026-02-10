@@ -2,7 +2,7 @@
 
 Merge M8 posts a concise, actionable report directly on the PR to accelerate resolution and reduce review thrash.
 
-### Why teams use Merge M8
+### What does it do?
 
 - Rapid risk snapshot (score, churn, risky files)
 - Conflict detection across open PRs
@@ -19,9 +19,13 @@ Merge M8 posts a concise, actionable report directly on the PR to accelerate res
 - Ownership and bus factor for touched files
 - Fatigue signal and changed-files summary
 
+### Snapshot
+![Example Merge M8 Report](./assets/image.png)
+
 ### Installation
 
-Copy and paste the following snippet into your workflow:
+1. Create a new workflow file in your repository under `.github/workflows/Merge-M8.yml` (you can name it whatever you like).
+2. Copy and paste the following snippet into your workflow:
 
 ```yaml
 name: "Merge M8"
@@ -142,6 +146,7 @@ jobs:
               - pattern: fixtures?
               - pattern: test-data
 ```
+All done! You're now ready to use the action 🎉
 
 ### Inputs
 
