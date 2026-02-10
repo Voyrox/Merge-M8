@@ -1,8 +1,8 @@
-# PR Risk Assessment GitHub Action
+# Metge M8 GitHub Action
 
-Nightwatch is a GitHub Action for teams that need faster, higher quality pull request reviews. It posts a concise, actionable report directly on the PR to accelerate resolution and reduce review thrash.
+Merge M8 is a GitHub Action for teams that need faster, higher quality pull request reviews. It posts a concise, actionable report directly on the PR to accelerate resolution and reduce review thrash.
 
-### Why teams use Nightwatch
+### Why teams use Merge M8
 
 - Rapid risk snapshot (score, churn, risky files)
 - Conflict detection across open PRs
@@ -24,7 +24,7 @@ Nightwatch is a GitHub Action for teams that need faster, higher quality pull re
 Add Nightwatch as a drop-in GitHub Action (example workflow):
 
 ```yaml
-name: PR Risk Assessment
+name: Merge M8
 
 on:
   pull_request:
@@ -40,7 +40,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Nightwatch
-        uses: Voyrox/Nightwatch@v1
+        uses: Voyrox/Merge-M8@v1
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           timeZone: America/New_York  # optional override (default: Australia/Sydney)
